@@ -264,13 +264,19 @@ require('lazy').setup({
 
   {
     'kevinhwang91/rnvimr', -- { ['do'] = 'make sync' }
+    --[[
     keys = {
       {
         {'<leader>r', ':RnvimrToggle<CR>', desc = "Toggle ranger"},
       },
     },
+    ]]--
+    dependencies = {
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    },
     config = function()
       vim.g.rnvimr_ex_enable = 1
+      vim.keymap.set('n', '<space>r', ':RnvimrToggle<CR>')
     end,
   },
 
