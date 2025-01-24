@@ -860,6 +860,9 @@ require('lazy').setup({
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment cterm=italic gui=italic'
+
+      vim.o.background = 'dark'
+      vim.opt.termguicolors = true
     end,
   },
 
