@@ -90,6 +90,10 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Cursor config
+vim.opt.guicursor:append { 'n:hor20-Cursor/lCursor' }
+vim.opt.guicursor:append { 'i:ver25-iCursor' }
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
