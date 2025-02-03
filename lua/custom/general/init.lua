@@ -1,7 +1,6 @@
--- [[ General setting options ]]
+-- [[ General Settings ]]
 -- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+--  For more options, see `:help option-list`
 
 --
 -- [[ General ]]
