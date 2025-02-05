@@ -4,8 +4,7 @@
 return {
   {
     'kevinhwang91/rnvimr',
-    keys =
-    {
+    keys = {
       {'<leader>r', '<cmd>RnvimrToggle<CR>', desc = 'Toggle [R]anger'},
     },
     dependencies = {
