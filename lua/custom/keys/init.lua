@@ -19,6 +19,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 --
+-- Window splitting (alt + cv)
+--
+vim.keymap.set('n', '<M-v>', '<C-w>v')
+vim.keymap.set('n', '<M-c>', '<C-w>s')
+
+--
 -- Window nav (ctrl + hjkl || ctrl + arrow keys)
 --  See `:help wincmd` for a list of all window commands
 --
@@ -42,3 +48,9 @@ vim.keymap.set('n', '<M-left>', '<cmd>vertical resize -2<CR>', { desc = 'Vertica
 vim.keymap.set('n', '<M-right>', '<cmd>vertical resize +2<CR>', { desc = 'Vertical resize increase' })
 vim.keymap.set('n', '<M-down>', '<cmd>resize -2<CR>', { desc = 'Horizontal resize decrease' })
 vim.keymap.set('n', '<M-up>', '<cmd>resize +2<CR>', { desc = 'Horizontal resize increase' })
+
+--
+-- Switch text buffers (tab & shift + tab)
+--
+vim.keymap.set('n', '<TAB>', ':bnext<CR>')
+vim.keymap.set('n', '<S-TAB>', ':bprevious<CR>')
