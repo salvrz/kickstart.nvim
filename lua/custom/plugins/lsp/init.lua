@@ -1,8 +1,6 @@
 return {
-    import = {
-        'custom/plugins/lsp/lazydev',
-        'custom/plugins/lsp/lspconfig',
-        'custom/plugins/lsp/autoformat',
-        'custom/plugins/lsp/autocomplete',
-    }
+    { import = 'custom/plugins/lsp/lazydev' },
+    { import = 'custom/plugins/lsp/lspconfig' },
+    { import = 'custom/plugins/lsp/autoformat' },
+    { import = 'custom/plugins/lsp/autocomplete' },
 }
