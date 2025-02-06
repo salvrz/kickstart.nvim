@@ -13,7 +13,7 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim', opts = {} },
+      { 'j-hui/fidget.nvim',       opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -136,6 +136,8 @@ return {
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
           end
+          vim.lsp.inlay_hint.enable(false)
+          vim.lsp.inlay_hint.enable(true)
         end,
       })
 
@@ -169,7 +171,27 @@ return {
         clangd = {},
         -- gopls = {},
         pyright = {},
-        rust_analyzer = {},
+        rust_analyzer = {
+          handlers = {
+            -- https://github.com/neovim/neovim/issues/26511
+            -- https://www.reddit.com/r/neovim/comments/17889r8/rust_show_inlay_hint_with_native_lsp/
+            -- When the LSP is ready, enable inlay hint for existing bufnr again.
+            -- Learn from rust-tools.nvim
+            ["experimental/serverStatus"] = function(_, result, ctx, _)
+              if result.quiescent then
+                for _, bufnr in ipairs(vim.lsp.get_buffers_by_client_id(ctx.client_id)) do
+                  -- First, toggle disable because bufstate.applied
+                  -- prevents vim.lsp.inlay_hint(bufnr, true) from refreshing.
+                  -- Therefore, we need to clear bufstate.applied.
+                  print("rust inlay hint reloading ", bufnr)
+                  vim.lsp.inlay_hint.enable(false, { bufnr })
+                  -- toggle enable
+                  vim.lsp.inlay_hint.enable(true, { bufnr })
+                end
+              end
+            end,
+          },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
