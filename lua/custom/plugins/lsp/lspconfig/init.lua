@@ -183,7 +183,6 @@ return {
                   -- First, toggle disable because bufstate.applied
                   -- prevents vim.lsp.inlay_hint(bufnr, true) from refreshing.
                   -- Therefore, we need to clear bufstate.applied.
-                  print("rust inlay hint reloading ", bufnr)
                   vim.lsp.inlay_hint.enable(false, { bufnr })
                   -- toggle enable
                   vim.lsp.inlay_hint.enable(true, { bufnr })
