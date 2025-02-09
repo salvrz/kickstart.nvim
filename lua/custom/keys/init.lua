@@ -60,3 +60,12 @@ vim.keymap.set('n', '<M-up>', '<cmd>resize +2<CR>', { desc = 'Horizontal resize 
 --
 vim.keymap.set('n', '<TAB>', ':bnext<CR>')
 vim.keymap.set('n', '<S-TAB>', ':bprevious<CR>')
+
+--
+-- Delete current buffer, without closing current window
+--
+vim.keymap.set('n', '<leader>dd', function()
+	local n = vim.fn.bufnr()
+	vim.cmd('bn')
+	vim.cmd('bd ' .. n)
+end, { desc = '[D]elete [B]uffer, without closing window' })
