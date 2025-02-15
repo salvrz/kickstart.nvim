@@ -13,4 +13,5 @@ return {
     { import = 'custom/plugins/vim-sleuth' },
     { import = 'custom/plugins/which-key' },
     { import = 'custom/plugins/treesitter' },
+    { import = 'custom/plugins/lualine' },
 }
