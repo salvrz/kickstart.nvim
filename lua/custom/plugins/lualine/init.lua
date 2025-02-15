@@ -9,7 +9,7 @@ return {
     },
     config = function()
       require('lualine').setup {
-        -- [mode, git, curr_file, buffers] [search_count, file_encoding, file_type, row:col/location]
+        -- [mode, git, curr_file, buffers] [search_count, diagnostics, file_encoding, file_type, row:col/location]
         options = {
           --theme = 'gruvbox',
           section_separators = '',
