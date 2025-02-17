@@ -9,9 +9,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
-require('custom/general')
-require('custom/interface')
-require('custom/keys')
+require 'custom/general'
+require 'custom/interface'
+require 'custom/keys'
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
