@@ -65,7 +65,12 @@ vim.keymap.set('n', '<S-TAB>', ':bprevious<CR>')
 -- Delete current buffer, without closing current window
 --
 vim.keymap.set('n', '<leader>dd', function()
-	local n = vim.fn.bufnr()
-	vim.cmd('bn')
-	vim.cmd('bd ' .. n)
+  local n = vim.fn.bufnr()
+  vim.cmd 'bn'
+  vim.cmd('bd ' .. n)
 end, { desc = '[D]elete [B]uffer, without closing window' })
+
+--
+-- Go to the 80th colunm in the current line
+--
+vim.keymap.set('n', '<leader>$', '80|', { desc = 'Goto column 80' })
