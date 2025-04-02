@@ -71,6 +71,13 @@ vim.keymap.set('n', '<leader>dd', function()
 end, { desc = '[D]elete [B]uffer, without closing window' })
 
 --
+-- Toggle diagnostics virtual lines
+--
+vim.keymap.set('n', '<leader>td', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled { virtual_lines = true }, { virtual_lines = true })
+end, { desc = '[T]oggle [D]iagnostics virtual lines' })
+
+--
 -- Go to the 80th colunm in the current line
 --
 vim.keymap.set('n', '<leader>$', '80|', { desc = 'Goto column 80' })
