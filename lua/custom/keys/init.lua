@@ -81,3 +81,9 @@ end, { desc = '[T]oggle [D]iagnostics virtual lines' })
 -- Go to the 80th colunm in the current line
 --
 vim.keymap.set('n', '<leader>$', '80|', { desc = 'Goto column 80' })
+
+--
+-- Keybind to wrap the text of the current line after the 80th colunm
+--
+-- TODO: this currently doesn't work!
+vim.keymap.set('n', '<CR>', '<cmd>i<CR><Esc><CR>', { desc = 'Insert newline at cursor' })
