@@ -13,7 +13,7 @@ return {
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Useful status updates for LSP.
-      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'j-hui/fidget.nvim', opts = {} },
 
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
@@ -88,7 +88,7 @@ return {
 
           -- Rename the variable under your cursor.
           --  Most Language Servers support renaming across files, etc.
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+          map('<leader>nn', vim.lsp.buf.rename, '[N]ew [N]ame')
 
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
@@ -177,7 +177,7 @@ return {
             -- https://www.reddit.com/r/neovim/comments/17889r8/rust_show_inlay_hint_with_native_lsp/
             -- When the LSP is ready, enable inlay hint for existing bufnr again.
             -- Learn from rust-tools.nvim
-            ["experimental/serverStatus"] = function(_, result, ctx, _)
+            ['experimental/serverStatus'] = function(_, result, ctx, _)
               if result.quiescent then
                 for _, bufnr in ipairs(vim.lsp.get_buffers_by_client_id(ctx.client_id)) do
                   -- First, toggle disable because bufstate.applied
