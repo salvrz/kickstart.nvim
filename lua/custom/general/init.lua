@@ -20,6 +20,7 @@ vim.opt.smartcase = true -- Case-sensitive searching if \C or 1+
 --
 -- [[ Visual ]]
 --
+vim.opt.scrolloff = 4
 vim.opt.showmode = false -- Mode already shown in status line
 vim.opt.colorcolumn = { 74, 80 } -- Column markers
 vim.opt.inccommand = 'split' -- Preview substitutions as you type
