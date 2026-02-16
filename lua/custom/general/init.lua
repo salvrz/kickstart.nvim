@@ -14,8 +14,8 @@ vim.opt.hidden = true -- Required to keep multiple buffers open
 vim.opt.splitright = true -- Configure new vertical splits
 vim.opt.splitbelow = true -- Configure new horizontal splits
 vim.opt.ignorecase = true -- Case-insensitive searching
-vim.opt.smartcase = true -- Case-sensitive searching if \C or 1+
--- capital letters in search term
+vim.opt.smartcase = true -- Case-sensitive searching if \C or 1+ capital letters
+vim.opt.expandtab = true
 
 --
 -- [[ Visual ]]
